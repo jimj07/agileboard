@@ -99,8 +99,10 @@ module.exports = (columnNames = [STARTING_COLUMN, DONE_COLUMN]) => {
       const result = findCard(card);
       if (!result) {
          throw (`${ERRORS.CARD_NOT_FOUND} ${card.getTitle()}`);
+
       } else if (goneAboveWIP(result.card.getPoint(), toColumn)) {
          throw (`${ERRORS.ABOVE_WIP} ${toColumn}`);
+
       } else {
          let cardToMove = removeCard(result.column, result.index);
          let column = columns[toColumn];
