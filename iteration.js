@@ -51,13 +51,11 @@ module.exports = (columnNames = [STARTING_COLUMN, DONE_COLUMN]) => {
 
    const findCard = (card) => {
       let result;
-      const isTheSame = (otherCard) => {
-         return card.equals(otherCard);
-      };
-
       for (let colName of columnNames) {
          let col = columns[colName];
-         let index = col.cards.findIndex(isTheSame);
+         let index = col.cards.findIndex((otherCard) => {
+            return card.equals(otherCard);
+         });
          if (index > -1) {
             result = {};
             result.card = col.cards[index];
@@ -95,14 +93,14 @@ module.exports = (columnNames = [STARTING_COLUMN, DONE_COLUMN]) => {
       if (!card) {
          throw (ERRORS.UNDEFINED_CARD);
       } else if (!columns[toColumn]) {
-         throw(`${ERRORS.COLUMN_NOT_FOUND} ${toColumn}`);
+         throw (`${ERRORS.COLUMN_NOT_FOUND} ${toColumn}`);
       }
 
       const result = findCard(card);
       if (!result) {
-         throw(`${ERRORS.CARD_NOT_FOUND} ${card.getTitle()}`);
+         throw (`${ERRORS.CARD_NOT_FOUND} ${card.getTitle()}`);
       } else if (goneAboveWIP(result.card.getPoint(), toColumn)) {
-         throw(`${ERRORS.ABOVE_WIP} ${toColumn}`);
+         throw (`${ERRORS.ABOVE_WIP} ${toColumn}`);
       } else {
          let cardToMove = removeCard(result.column, result.index);
          let column = columns[toColumn];
@@ -122,7 +120,7 @@ module.exports = (columnNames = [STARTING_COLUMN, DONE_COLUMN]) => {
 
    const getCards = (column) => {
       if (!columns[column]) {
-         throw(`${ERRORS.COLUMN_NOT_FOUND} ${column}`);
+         throw (`${ERRORS.COLUMN_NOT_FOUND} ${column}`);
       }
 
       return columns[column].cards;
@@ -130,7 +128,7 @@ module.exports = (columnNames = [STARTING_COLUMN, DONE_COLUMN]) => {
 
    const setWIP = (column, wip) => {
       if (!columns[column]) {
-         throw(`${ERRORS.COLUMN_NOT_FOUND} ${column}`);
+         throw (`${ERRORS.COLUMN_NOT_FOUND} ${column}`);
       }
 
       columns[column].WIP = wip;
