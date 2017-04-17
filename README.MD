@@ -60,6 +60,7 @@ iteration = board2.createNewIteration(); // throw an exception
 
 ### .add(card)
 - card: Object (Card)
+
 Add a card to the iteration. The card will be put into a stand by column
 ```javascript
 let board = Board(['starting', 'done']);
