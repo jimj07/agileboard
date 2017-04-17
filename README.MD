@@ -103,6 +103,7 @@ iteration.velocity(); // return 10
 
 ### .getCards(column)
 - column: string
+
 Return an array of all the cards in the specified column
 ```javascript
 let board = Board(['starting', 'done']);
@@ -116,6 +117,7 @@ iteration.getCards('done'); // return [card]
 ### .setWIP(column, wip)
 - column: string
 - wip: number (>= 0)
+
 Set the work in progress limit for the specified column
 ```javascript
 iteration.setWIP('starting', 10);
