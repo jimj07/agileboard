@@ -69,9 +69,11 @@ iteration.add(card);
 ```
 
 ### .moveCard(card, column)
+- card: Object (Card)
+- column: string
+
 Move the card to a specified column. This function will fisrt find the card that is the same as the one provided (using card.equals()). And then move the card to the specified column. 
-card: Object (Card)
-column: string
+
 
 ```javascript
 let board = Board(['starting', 'done']);
