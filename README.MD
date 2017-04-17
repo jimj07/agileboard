@@ -39,7 +39,7 @@ let board = Board(['starting', 'done']);
 ```
 
 ### .createNewIteration()
-Create a new iteration and overwrite the existing one. One board can only have one iteration.
+Create a new iteration and overwrite the existing one. One board can only have one iteration for now.
 
 ### .getIteration()
 Get the current iteration
