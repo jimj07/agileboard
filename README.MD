@@ -1,4 +1,4 @@
-# Traffic Lights
+# Agile Board
 Agile Board
 
 ## How to run:
@@ -86,6 +86,7 @@ iteration.add(card);
 iteration.move(card, 'starting');
 iteration.move(card, 'done');
 iteration.undoLastMove() // the card is moved back to starting
+iteration.undoLastMove() // no effect
 ```
 
 ### .velocity(column)
