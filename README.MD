@@ -2,6 +2,8 @@
 Agile Board
 
 ## How to run:
+### Run example
+npm run example
 ### Run tests
 npm test
 ### Run tests with code coverage tool istanbul

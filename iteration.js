@@ -16,7 +16,6 @@ module.exports = (columnNames = [STARTING_COLUMN, DONE_COLUMN]) => {
    // Private Functions
    const initialize = () => {
       for (let col of columnNames) {
-
          // Do no allow colunmn name to be the same as the stand by column name
          if (col === STANDBY_COLUMN) {
             throw (ERRORS.INVALID_COLUMN_NAME);
