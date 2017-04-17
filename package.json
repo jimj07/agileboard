@@ -11,6 +11,7 @@
   },
   "author": "Jim Jiang",
   "license": "ISC",
+  "repository": "jimj07/agileboard",
   "devDependencies": {
     "chai": "^3.5.0",
     "chai-as-promised": "^6.0.0",
