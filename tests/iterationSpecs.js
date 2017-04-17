@@ -262,5 +262,16 @@ describe('iteration', () => {
             expect(error).to.equals(`${ERRORS.COLUMN_NOT_FOUND} ${column}`);
          }
       });
+
+      it('should throw error about WIP is invalid', () => {
+         const iteration = Iteration();
+         const column = 'starting';
+         const wip = -1;
+         try {
+            iteration.setWIP(column, wip);
+         } catch (error) {
+            expect(error).to.equals(`${ERRORS.INVALID_WIP} ${wip}`);
+         }
+      });
    });
 });

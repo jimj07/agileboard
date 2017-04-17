@@ -59,6 +59,7 @@ iteration = board2.createNewIteration(); // throw an exception
 ```
 
 ### .add(card)
+- card: Object (Card)
 Add a card to the iteration. The card will be put into a stand by column
 ```javascript
 let board = Board(['starting', 'done']);
@@ -89,8 +90,33 @@ iteration.undoLastMove() // the card is moved back to starting
 iteration.undoLastMove() // no effect
 ```
 
-### .velocity(column)
+### .velocity()
+Return the sum of the points of all cards that are in the done column for an iteration
+```javascript
+let board = Board(['starting', 'done']);
+let iteration = board.createNewIteration();
+let card = Card('title', 'desc', 10);
+iteration.add(card);
+iteration.move(card, 'done');
+iteration.velocity(); // return 10
+```
 
 ### .getCards(column)
+- column: string
+Return an array of all the cards in the specified column
+```javascript
+let board = Board(['starting', 'done']);
+let iteration = board.createNewIteration();
+let card = Card('title', 'desc', 10);
+iteration.add(card);
+iteration.move(card, 'done');
+iteration.getCards('done'); // return [card]
+```
 
-### .setWIP(column)
+### .setWIP(column, wip)
+- column: string
+- wip: number (>= 0)
+Set the work in progress limit for the specified column
+```javascript
+iteration.setWIP('starting', 10);
+```

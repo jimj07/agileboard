@@ -131,6 +131,8 @@ module.exports = (columnNames = [STARTING_COLUMN, DONE_COLUMN]) => {
    const setWIP = (column, wip) => {
       if (!columns[column]) {
          throw (`${ERRORS.COLUMN_NOT_FOUND} ${column}`);
+      } else if (wip < 0){
+         throw (`${ERRORS.INVALID_WIP} ${wip}`);
       }
 
       columns[column].WIP = wip;

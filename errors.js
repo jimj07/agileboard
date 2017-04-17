@@ -5,5 +5,6 @@ module.exports = {
    CARD_NOT_FOUND: 'Can not found the card',
    COLUMN_NOT_FOUND: 'Can not found the column',
    INVALID_COLUMN_NAME: 'Invalid column name',
+   INVALID_WIP: 'Work in progress limit should be a positive number',
    ABOVE_WIP: 'Reaching work in progress limit for the column',
 };
