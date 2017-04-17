@@ -1,15 +1,26 @@
 # Agile Board
 Agile Board
 
+## Installation:
+```shell
+npm install agileboard
+```
+
 ## How to run:
 ### Run example
+```shell
 npm run example
+```
 
 ### Run tests
+```shell
 npm test
+```
 
 ### Run tests with code coverage tool istanbul
+```shell
 npm run coverage
+```
 
 ## Card
 ### Instantiation
