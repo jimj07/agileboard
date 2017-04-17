@@ -74,17 +74,19 @@ iteration.add(card);
 
 Move the card to a specified column. This function will fisrt find the card that is the same as the one provided (using card.equals()). And then move the card to the specified column. 
 
-
 ```javascript
-let board = Board(['starting', 'done']);
-let iteration = board.createNewIteration();
-let card = Card('title', 'desc', 10);
-
 iteration.add(card);
 iteration.move(card, 'done');
 ```
 
 ### .undoLastMove()
+Undo the last move on the iteration. Consecutively calling undo() can only undo one move.
+```javascript
+iteration.add(card);
+iteration.move(card, 'starting');
+iteration.move(card, 'done');
+iteration.undoLastMove() // the card is moved back to starting
+```
 
 ### .velocity(column)
 
